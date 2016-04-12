@@ -12,6 +12,8 @@ session_start();	#Fire a session. 1st instance.
 			$pass = $_POST['pass'];
 			$email = $_POST['email'];
 
+			#More validations can be done here.
+
 			#check if pass matches entered email addy
 			$stmt = $dbh->prepare("SELECT password FROM login WHERE email=?");
 			$stmt->bindParam(1, $email);
